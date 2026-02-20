@@ -36,25 +36,11 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun Presetantion() {
-    TarjetaPresentacion(
-        nombre = "Santiago Pérez",
-        rol = "Estudiante UNAB",
-        edad = 20,
-        correo = "santi@example.com",
-        ciudad = "Bucaramanga",
-        descripcion = "Me gusta el desarrollo móvil porque puedo crear apps útiles y fáciles de usar. Me interesa mejorar la experiencia del usuario y aprender buenas prácticas."
-    )
+    TarjetaPresentacion()
 }
 
 @Composable
-fun TarjetaPresentacion(
-    nombre: String,
-    rol: String,
-    edad: Int,
-    correo: String,
-    ciudad: String,
-    descripcion: String
-) {
+fun TarjetaPresentacion() {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -84,14 +70,45 @@ fun TarjetaPresentacion(
 
                 Spacer(modifier = Modifier.height(12.dp))
 
+                Text(
+                    text = "Santiago Pérez",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold
+                )
+
+
+                Text(
+                    text = "Desarrollador Móvil Jr.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.primary
+                )
+
+                Spacer(modifier = Modifier.height(14.dp))
+                Divider()
+                Spacer(modifier = Modifier.height(12.dp))
+
+
+                InfoFila(label = "EDAD", value = "20 años")
+                Spacer(modifier = Modifier.height(8.dp))
+                InfoFila(
+                    label = "CORREO",
+                    value = "sperez626@unab.edu.co",
+                    valueColor = MaterialTheme.colorScheme.primary
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                InfoFila(label = "CIUDAD", value = "Bucaramanga, Colombia")
+
+                Spacer(modifier = Modifier.height(14.dp))
+                Divider()
+                Spacer(modifier = Modifier.height(12.dp))
+
 
             }
         }
     }
 }
-
 @Composable
-private fun InfoFila(
+fun InfoFila(
     label: String,
     value: String,
     valueColor: androidx.compose.ui.graphics.Color = MaterialTheme.colorScheme.onSurface
