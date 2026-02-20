@@ -102,6 +102,26 @@ fun TarjetaPresentacion() {
                 Divider()
                 Spacer(modifier = Modifier.height(12.dp))
 
+                Text(
+                    text = "Me interesa el desarrollo móvil porque me permite crear soluciones útiles. " +
+                            "Me gusta aprender sobre interfaces (UI/UX), bases de datos y buenas prácticas de programación. "+
+                            "Solía hacer deporte pero despues de una lesion de meniscos me mantego fuera del deporte.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(modifier = Modifier.height(14.dp))
+                Divider()
+                Spacer(modifier = Modifier.height(12.dp))
+                Button(
+                    onClick = { },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(48.dp),
+                    shape = MaterialTheme.shapes.large
+                ) {
+                    Text("Contactar conmigo")
+                }
+
 
             }
         }
